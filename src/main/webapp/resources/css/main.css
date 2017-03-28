@@ -1,21 +1,21 @@
-.page
-{
+.page {
     background-color: LightSkyBlue;
-    margin: auto;
-    position: absolute;
-    text-align: center;
 }
 
-
-.table
-{
-    width: 300px;
-    border: 1px ;
-    margin: auto;
+H2 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-.button
-{
+.table {
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+}
+
+.th {
+    border: 1px solid black;
+    background: #b0e0e6; /* Цвет фона */
+}
+
+.button {
     background: -moz-linear-gradient(#00BBD6, #EBFFFF);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
