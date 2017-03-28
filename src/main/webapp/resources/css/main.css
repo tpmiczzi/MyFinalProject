@@ -7,12 +7,12 @@ H2 {
 }
 
 .table {
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    border-collapse: collapse;
 }
 
 .th {
     border: 1px solid black;
-    background: #b0e0e6; /* Цвет фона */
+    background: #b0e0e6;
 }
 
 .button {
