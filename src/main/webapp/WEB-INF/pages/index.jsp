@@ -4,19 +4,21 @@
 <html>
 <head>
     <title>MyFinalProject</title>
-    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
     <script src="<c:url value="/resources/js/main.js" />"></script>
 </head>
 <body class="page">
 
 <h2>Enter next information</h2>
-<div>
+<div id="tableInput">
     <form:form method="post" action="createHotelRoom" name='errorCreateHotelRoom' onsubmit='return validate()'>
         <table>
             <tr>
-                <th>name room</th>
+                <th>
+                    <div class="text">name room</div>
+                </th>
                 <th colspan="2">
-                    <input name="nameRoom" type="text" >
+                    <input name="nameRoom" type="text">
                 </th>
                 <th>
                     <span style='color:red' id='errorNameRoom'></span>
@@ -25,7 +27,7 @@
             <tr>
                 <th>bad in room</th>
                 <th colspan="2">
-                    <input name="badInRoom" type="text" >
+                    <input name="badInRoom" type="text">
                 </th>
                 <th>
                     <span style='color:red' id='errorBadInRoom'></span>
@@ -34,7 +36,7 @@
             <tr>
                 <th>price room</th>
                 <th colspan="2">
-                    <input name="priceRoom" type="text" >
+                    <input name="priceRoom" type="text">
                 </th>
                 <th>
                     <span style='color:red' id='errorPriceRoom'></span>
@@ -51,13 +53,15 @@
             </tr>
             <tr>
                 <th colspan="3">
-                    <input class="button" type="submit" value="Save information" />
+                    <input class="button" type="submit" value="Save information"/>
                 </th>
             </tr>
         </table>
     </form:form>
 </div>
-<h2>Information about Hotel rooms</h2>
+<div id="test">
+    Information about Hotel rooms
+</div>
 <table class="table">
     <tr>
         <th class="th">name room</th>
