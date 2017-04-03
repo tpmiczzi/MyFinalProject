@@ -8,78 +8,81 @@
     <script src="<c:url value="/resources/js/jquery-3.2.0.min.js" />" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/main.js" />" type="text/javascript"></script>
 
+    <%--<link href="main.css" rel="stylesheet" type="text/css">--%>
+
 </head>
-<body class="page">
+<body>
+<div class="allDocument">
 
-<h2>Enter next information</h2>
-<div id="tableInput">
-    <form:form method="post" action="createHotelRoom" name='errorCreateHotelRoom' onsubmit='return validate()'>
-        <table>
-            <tr>
-                <th>
-                    <div class="text">name room</div>
-                </th>
-                <th colspan="2">
-                    <input name="nameRoom" type="text">
-                </th>
-                <th>
-                    <span style='color:red' id='errorNameRoom'></span>
-                </th>
-            </tr>
-            <tr>
-                <th>bad in room</th>
-                <th colspan="2">
-                    <input name="badInRoom" type="text">
-                </th>
-                <th>
-                    <span style='color:red' id='errorBadInRoom'></span>
-                </th>
-            </tr>
-            <tr>
-                <th>price room</th>
-                <th colspan="2">
-                    <input name="priceRoom" type="text">
-                </th>
-                <th>
-                    <span style='color:red' id='errorPriceRoom'></span>
-                </th>
-            </tr>
-            <tr>
-                <th>free or busy</th>
-                <th>
-                    <input name="freeOrBusy" type="radio" value="true">free room<Br>
-                </th>
-                <th>
-                    <input name="freeOrBusy" type="radio" value="false">busy room<Br>
-                </th>
-            </tr>
-            <tr>
-                <th colspan="3">
-                    <input class="button" type="submit" value="Save information"/>
-                </th>
-            </tr>
-        </table>
-    </form:form>
-</div>
-<div id="test">
-    Information about Hotel rooms
-</div>
-<table class="table">
-    <tr>
-        <th class="th">name room</th>
-        <th class="th">bad in room</th>
-        <th class="th">price room</th>
-        <th class="th">free or busy</th>
-    </tr>
-    <c:forEach items="${hotelRoomList}" var="hotelRoomList">
+    <h2>Enter next information</h2>
+    <div>
+        <form:form method="post" action="createHotelRoom">
+            <table class="tableInput">
+                <tr>
+                    <th>
+                        <div>name room</div>
+                    </th>
+                    <th colspan="2">
+                        <input name="nameRoom" type="text">
+                    </th>
+                    <th>
+                        <span style='color:red' id='errorNameRoom'></span>
+                    </th>
+                </tr>
+                <tr>
+                    <th>bad in room</th>
+                    <th colspan="2">
+                        <input name="badInRoom" type="text">
+                    </th>
+                    <th>
+                        <span style='color:red' id='errorBadInRoom'></span>
+                    </th>
+                </tr>
+                <tr>
+                    <th>price room</th>
+                    <th colspan="2">
+                        <input name="priceRoom" type="text">
+                    </th>
+                    <th>
+                        <span style='color:red' id='errorPriceRoom'></span>
+                    </th>
+                </tr>
+                <tr>
+                    <th>free or busy</th>
+                    <th>
+                        <input name="freeOrBusy" type="radio" value="true">free room<Br>
+                    </th>
+                    <th>
+                        <input name="freeOrBusy" type="radio" value="false">busy room<Br>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="3">
+                        <input class="button" type="submit" value="Save information"/>
+                    </th>
+                </tr>
+            </table>
+        </form:form>
+    </div>
+    <div>
+        Information about Hotel rooms
+    </div>
+    <table class="tableOutput">
         <tr>
-            <th class="th">${hotelRoomList.nameRoom}</th>
-            <th class="th">${hotelRoomList.badInRoom}</th>
-            <th class="th">${hotelRoomList.priceRoom}</th>
-            <th class="th">${hotelRoomList.freeOrBusy}</th>
+            <th>name room</th>
+            <th>bad in room</th>
+            <th>price room</th>
+            <th>free or busy</th>
         </tr>
-    </c:forEach>
-</table>
-
+        <c:forEach items="${hotelRoomList}" var="hotelRoomList">
+            <tr class="select">
+                <th>${hotelRoomList.nameRoom}</th>
+                <th>${hotelRoomList.badInRoom}</th>
+                <th>${hotelRoomList.priceRoom}</th>
+                <th>${hotelRoomList.freeOrBusy}</th>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 </body>
 </html>

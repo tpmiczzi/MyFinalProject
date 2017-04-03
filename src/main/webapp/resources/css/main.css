@@ -1,70 +1,117 @@
-body{
-    background-image: url("../image/background.jpg");
+body {
+    text-align: center;
+    background-color: yellow;
 }
-/*.page {*/
-    /*background-color: LightSkyBlue;*/
-/*}*/
+
+.allDocument {
+    width: 800px; /* ширина основного блока */
+    height: 100%; /* высота для наглядности */
+    background: LightSkyBlue; /* цвет блока для наглядности */
+    margin: 0 auto; /* задаем отступ слева и справа auto чтобы сработало выравнивание по центру */
+
+}
+
+.tableInput {
+    width: 400px; /* ширина основного блока */
+    background: red; /* цвет блока для наглядности */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableOutput {
+    width: 400px; /* ширина основного блока */
+    background: green; /* цвет блока для наглядности */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 H2 {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-#test{
-    transform: rotate(10deg) scale(0.5);
-    transition: 3.0s transform;
-
-    background-color: red;
-    color:  black;
-    padding: 15px;
-    margin: 15px;
-    border: 7px solid blue;
-    border-radius: 100px;
-    opacity: 0.7;
-    box-shadow: 10px 10px 10px grey;
-    display: block;
-    text-align: center;
+.button {
+    background: -moz-linear-gradient(#00BBD6, #EBFFFF);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+    padding: 3px 7px;
+    color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
 }
 
-#test:hover{
-    transform: rotate(359deg) scale(1) ;
-}
-
-.table {
-    table-layout:fixed;
-    border-collapse:separate;
-    empty-cells:hide;
-}
-
-.th {
-    border: 1px solid black;
-    background: #b0e0e6;
-}
-
-#tableInput{
-    table-layout:fixed;
-    border-collapse:separate;
-    empty-cells:hide;
-}
-
-.text{
-    color: coral;
-    background-color: green;
-}
-
-.text:hover{
-    border: 10px solid red;
+.select:hover {
+    background: #f3bd48;
 }
 
 
-
-/*.button {*/
-/*background: -moz-linear-gradient(#00BBD6, #EBFFFF);*/
-/*background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));*/
-/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');*/
-/*padding: 3px 7px;*/
-/*color: #333;*/
-/*-moz-border-radius: 5px;*/
-/*-webkit-border-radius: 5px;*/
-/*border-radius: 5px;*/
-/*border: 1px solid #666;*/
+/*body{*/
+/*background-image: url("../image/background.jpg");*/
+/*align-content: center;*/
 /*}*/
+/*!*.page {*!*/
+/*!*background-color: LightSkyBlue;*!*/
+/*!*}*!*/
+
+/*H2 {*/
+/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+/*}*/
+
+/*#test{*/
+/*transform: rotate(10deg) scale(0.5);*/
+/*transition: 3.0s transform;*/
+
+/*background-color: red;*/
+/*color:  black;*/
+/*padding: 15px;*/
+/*margin: 15px;*/
+/*border: 7px solid blue;*/
+/*border-radius: 100px;*/
+/*opacity: 0.7;*/
+/*box-shadow: 10px 10px 10px grey;*/
+/*display: block;*/
+/*text-align: center;*/
+/*}*/
+
+/*#test:hover{*/
+/*transform: rotate(359deg) scale(1) ;*/
+/*}*/
+
+/*.table {*/
+/*table-layout:fixed;*/
+/*border-collapse:separate;*/
+/*empty-cells:hide;*/
+/*}*/
+
+/*.th {*/
+/*border: 1px solid black;*/
+/*background: #b0e0e6;*/
+/*}*/
+
+/*#tableInput{*/
+/*table-layout:fixed;*/
+/*border-collapse:separate;*/
+/*empty-cells:hide;*/
+/*}*/
+
+/*.text{*/
+/*color: coral;*/
+/*background-color: green;*/
+/*}*/
+
+/*.text:hover{*/
+/*border: 10px solid red;*/
+/*}*/
+
+/*!*.button {*!*/
+/*!*background: -moz-linear-gradient(#00BBD6, #EBFFFF);*!*/
+/*!*background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));*!*/
+/*!*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');*!*/
+/*!*padding: 3px 7px;*!*/
+/*!*color: #333;*!*/
+/*!*-moz-border-radius: 5px;*!*/
+/*!*-webkit-border-radius: 5px;*!*/
+/*!*border-radius: 5px;*!*/
+/*!*border: 1px solid #666;*!*/
+/*!*}*!*/

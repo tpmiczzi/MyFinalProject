@@ -1,6 +1,6 @@
 jQuery('document').ready(function () {
 
-    jQuery('body').append('<a href="http://google.com">Go</a>');
+    // jQuery('body').append('<a href="http://google.com">Go</a>');
 
 });
 
