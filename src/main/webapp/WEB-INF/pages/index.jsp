@@ -5,7 +5,9 @@
 <head>
     <title>MyFinalProject</title>
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
-    <script src="<c:url value="/resources/js/main.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery-3.2.0.min.js" />" type="text/javascript"></script>
+    <script src="<c:url value="/resources/js/main.js" />" type="text/javascript"></script>
+
 </head>
 <body class="page">
 
@@ -78,5 +80,6 @@
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>
