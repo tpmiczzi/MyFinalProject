@@ -7,79 +7,80 @@
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet" type="text/css">
     <script src="<c:url value="/resources/js/jquery-3.2.0.min.js" />" type="text/javascript"></script>
     <script src="<c:url value="/resources/js/main.js" />" type="text/javascript"></script>
-
-    <%--<link href="main.css" rel="stylesheet" type="text/css">--%>
-
 </head>
 <body>
 <div class="allDocument">
-
     <h2>Enter next information</h2>
     <div>
-        <form:form method="post" action="createHotelRoom">
+        <form:form method="post" action="createHotelRoom" onsubmit="return validateForm()" name="formInputData">
             <table class="tableInput">
                 <tr>
-                    <th>
+                    <td>
                         <div>name room</div>
-                    </th>
-                    <th colspan="2">
+                    </td>
+                    <td>
                         <input name="nameRoom" type="text">
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <span style='color:red' id='errorNameRoom'></span>
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>bad in room</th>
-                    <th colspan="2">
+                    <td>bad in room</td>
+                    <td>
                         <input name="badInRoom" type="text">
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <span style='color:red' id='errorBadInRoom'></span>
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>price room</th>
-                    <th colspan="2">
+                    <td>price room</td>
+                    <td>
                         <input name="priceRoom" type="text">
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <span style='color:red' id='errorPriceRoom'></span>
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th>free or busy</th>
-                    <th>
+                    <td>free or busy</td>
+                    <td>
                         <input name="freeOrBusy" type="radio" value="true">free room<Br>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <input name="freeOrBusy" type="radio" value="false">busy room<Br>
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <th colspan="3">
+                    <td colspan="3" align="right">
+                        <span style='color:red' id='errorFreeOrBusy'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
                         <input class="button" type="submit" value="Save information"/>
-                    </th>
+                    </td>
                 </tr>
             </table>
         </form:form>
     </div>
-    <div>
-        Information about Hotel rooms
-    </div>
+
+    <h2>Information about Hotel rooms</h2>
+
     <table class="tableOutput">
-        <tr>
-            <th>name room</th>
-            <th>bad in room</th>
-            <th>price room</th>
-            <th>free or busy</th>
+        <tr class="tdThOutput">
+            <th class="tdThOutput">name room</th>
+            <th class="tdThOutput">bad in room</th>
+            <th class="tdThOutput">price room</th>
+            <th class="tdThOutput">free or busy</th>
         </tr>
         <c:forEach items="${hotelRoomList}" var="hotelRoomList">
             <tr class="select">
-                <th>${hotelRoomList.nameRoom}</th>
-                <th>${hotelRoomList.badInRoom}</th>
-                <th>${hotelRoomList.priceRoom}</th>
-                <th>${hotelRoomList.freeOrBusy}</th>
+                <td class="tdThOutput">${hotelRoomList.nameRoom}</td>
+                <td class="tdThOutput">${hotelRoomList.badInRoom}</td>
+                <td class="tdThOutput">${hotelRoomList.priceRoom}</td>
+                <td class="tdThOutput">${hotelRoomList.freeOrBusy}</td>
             </tr>
         </c:forEach>
     </table>
