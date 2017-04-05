@@ -75,12 +75,12 @@
             <th class="tdThOutput">price room</th>
             <th class="tdThOutput">free or busy</th>
         </tr>
-        <c:forEach items="${hotelRoomList}" var="hotelRoomList">
+        <c:forEach items="${hotelRoomOldList}" var="hotelRoomOldList">
             <tr class="select">
-                <td class="tdThOutput">${hotelRoomList.nameRoom}</td>
-                <td class="tdThOutput">${hotelRoomList.badInRoom}</td>
-                <td class="tdThOutput">${hotelRoomList.priceRoom}</td>
-                <td class="tdThOutput">${hotelRoomList.freeOrBusy}</td>
+                <td class="tdThOutput">${hotelRoomOldList.nameRoom}</td>
+                <td class="tdThOutput">${hotelRoomOldList.badInRoom}</td>
+                <td class="tdThOutput">${hotelRoomOldList.priceRoom}</td>
+                <td class="tdThOutput">${hotelRoomOldList.freeOrBusy}</td>
             </tr>
         </c:forEach>
     </table>

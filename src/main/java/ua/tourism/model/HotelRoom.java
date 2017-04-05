@@ -1,49 +1,77 @@
 package ua.tourism.model;
 
-public class HotelRoom {
-    private Integer id;
-    private String nameRoom;
-    private Integer badInRoom;
-    private Double priceRoom;
-    private Boolean freeOrBusy;
+import javax.persistence.*;
+import java.util.Date;
 
-    public HotelRoom() {
+@Entity
+@Table(name = "hotelroom")
+public class HotelRoom {
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "nameroom")
+    private String nameRoom;
+
+    @Column(name = "amountbed")
+    private int amountBed;
+
+    @Column(name = "price")
+    private int price;
+
+    @Column(name = "bookedfrom")
+    private Date bookedFrom;
+
+    @Column(name = "bookedto")
+    private Date bookedTo;
+
+    public int getId() {
+        return id;
     }
 
-    public Integer getId() {
-        return id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNameRoom() {
         return nameRoom;
     }
 
-    public Integer getBadInRoom() {
-        return badInRoom;
-    }
-
-    public Double getPriceRoom() {
-        return priceRoom;
-    }
-
-    public Boolean getFreeOrBusy() {
-        return freeOrBusy;
-    }
-
     public void setNameRoom(String nameRoom) {
         this.nameRoom = nameRoom;
     }
 
-    public void setBadInRoom(Integer badInRoom) {
-        this.badInRoom = badInRoom;
+    public int getAmountBed() {
+        return amountBed;
     }
 
-    public void setPriceRoom(Double priceRoom) {
-        this.priceRoom = priceRoom;
+    public void setAmountBed(int amountBed) {
+        this.amountBed = amountBed;
     }
 
-    public void setFreeOrBusy(Boolean freeOrBusy) {
-        this.freeOrBusy = freeOrBusy;
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Date getBookedFrom() {
+        return bookedFrom;
+    }
+
+    public void setBookedFrom(Date bookedFrom) {
+        this.bookedFrom = bookedFrom;
+    }
+
+    public Date getBookedTo() {
+        return bookedTo;
+    }
+
+    public void setBookedTo(Date bookedTo) {
+        this.bookedTo = bookedTo;
     }
 
     @Override
@@ -51,9 +79,10 @@ public class HotelRoom {
         return "HotelRoom{" +
                 "id=" + id +
                 ", nameRoom='" + nameRoom + '\'' +
-                ", badInRoom=" + badInRoom +
-                ", priceRoom=" + priceRoom +
-                ", freeOrBusy=" + freeOrBusy +
+                ", amountBed=" + amountBed +
+                ", price=" + price +
+                ", bookedFrom=" + bookedFrom +
+                ", bookedTo=" + bookedTo +
                 '}';
     }
 }
