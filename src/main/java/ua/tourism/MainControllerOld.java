@@ -5,7 +5,7 @@
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RequestParam;
-//import ua.tourism.model.HotelRoomOld;
+//import ua.tourism.HotelRoomOld;
 //
 //import java.util.LinkedList;
 //import java.util.List;

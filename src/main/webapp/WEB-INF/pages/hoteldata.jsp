@@ -62,9 +62,9 @@
     <tr>
         <td>${hotel.id}</td>
         <td>${hotel.nameRoom}</td>
-        <td>${hotel.countryHotel}</td>
-        <td>${hotel.starsHotel}</td>
-        <td>${hotel.amountRooms}</td>
+        <td>${hotelRoom.nameroom}</td>
+        <td>${hotelRoom.amountbed}</td>
+        <td>${hotelRoom.price}</td>
     </tr>
 </table>
 </body>

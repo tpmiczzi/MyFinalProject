@@ -58,11 +58,9 @@ public class HotelDaoImpl implements HotelDao {
         Session session = this.sessionFactory.getCurrentSession();
         List<Hotel> hotelList = session.createQuery("from Hotel").list();
 
-
-
-//        for (Hotel hotel: hotelList){
-//            logger.info("Hotel list: " + hotel);
-//        }
+        for (Hotel hotel: hotelList){
+            logger.info("Hotel list: " + hotel);
+        }
 
         return hotelList;
     }

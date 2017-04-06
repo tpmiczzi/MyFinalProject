@@ -30,6 +30,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>ua.tourism.model.Hotel</value>
+                <value>ua.tourism.model.HotelRoom</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -40,13 +41,22 @@
         </property>
     </bean>
 
-    <!--BookDao and BookService beans-->
+    <!--HotelDao and HotelService beans-->
     <bean id="hotelDao" class="ua.tourism.dao.HotelDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
     <bean id="hotelService" class="ua.tourism.service.HotelServiceImpl">
         <property name="hotelDao" ref="hotelDao"/>
+    </bean>
+
+    <!--HotelRoomDao and HotelRoomService beans-->
+    <bean id="hotelRoomDao" class="ua.tourism.dao.HotelRoomDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="hotelRoomService" class="ua.tourism.service.HotelRoomServiceImpl">
+        <property name="hotelRoomDao" ref="hotelRoomDao"/>
     </bean>
 
     <context:component-scan base-package="ua.tourism"/>
