@@ -21,12 +21,25 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
+    @RequestMapping(value = "startpage", method = RequestMethod.GET)
+    public String startpage(){
+        return "index";
+    }
+
     @RequestMapping(value = "hotels", method = RequestMethod.GET)
     public String listHotels(Model model){
         model.addAttribute("hotel", new Hotel());
         model.addAttribute("listHotels", this.hotelService.listHotel());
 
         return "hotels";
+    }
+
+    @RequestMapping(value = "/hotel/changehotel", method = RequestMethod.GET)
+    public String changeHotel(Model model){
+        model.addAttribute("hotel", new Hotel());
+        model.addAttribute("listHotels", this.hotelService.listHotel());
+
+        return "changehotel";
     }
 
     @RequestMapping(value = "/hotel/add", method = RequestMethod.POST)
@@ -36,14 +49,14 @@ public class HotelController {
         }else {
             this.hotelService.updateHotel(hotel);
         }
-        return "redirect:/hotels";
+        return "redirect:/hotel/changehotel";
     }
 
     @RequestMapping("/remove/{id}")
     public String removeHotel(@PathVariable("id") int id){
         this.hotelService.removeHotel(id);
 
-        return "redirect:/hotels";
+        return "redirect:/hotel/changehotel";
     }
 
     @RequestMapping("edit/{id}")
@@ -51,7 +64,7 @@ public class HotelController {
         model.addAttribute("hotel", this.hotelService.getHotelById(id));
         model.addAttribute("listHotels", this.hotelService.listHotel());
 
-        return "hotels";
+        return "changehotel";
     }
 
     @RequestMapping("hoteldata/{id}")
