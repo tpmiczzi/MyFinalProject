@@ -11,7 +11,7 @@ public class Hotel {
     private int id;
 
     @Column(name = "namehotel")
-    private String nameRoom;
+    private String nameHotel;
 
     @Column(name = "countryhotel")
     private String countryHotel;
@@ -30,12 +30,12 @@ public class Hotel {
         this.id = id;
     }
 
-    public String getNameRoom() {
-        return nameRoom;
+    public String getNameHotel() {
+        return nameHotel;
     }
 
-    public void setNameRoom(String nameRoom) {
-        this.nameRoom = nameRoom;
+    public void setNameHotel(String nameHotel) {
+        this.nameHotel = nameHotel;
     }
 
     public String getCountryHotel() {
@@ -66,7 +66,7 @@ public class Hotel {
     public String toString() {
         return "Hotel{" +
                 "id=" + id +
-                ", nameRoom='" + nameRoom + '\'' +
+                ", nameHotel='" + nameHotel + '\'' +
                 ", countryHotel='" + countryHotel + '\'' +
                 ", starsHotel=" + starsHotel +
                 ", amountRooms=" + amountRooms +

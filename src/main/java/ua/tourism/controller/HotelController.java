@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.tourism.model.Hotel;
+import ua.tourism.model.HotelRoom;
 import ua.tourism.service.HotelRoomService;
 import ua.tourism.service.HotelService;
+
+import java.util.Date;
 
 @Controller
 public class HotelController {
@@ -89,4 +92,13 @@ public class HotelController {
 
         return "hoteldata";
     }
+
+    // add date from booked
+    @RequestMapping("room/addDate")
+    public String addDate(@ModelAttribute("hotelRoom") HotelRoom hotelRoom, @ModelAttribute("bookedFrom")Date date){
+
+        this.hotelRoomService.addDate(hotelRoom, date);
+        return "redirect:/hoteldata/{id}";
+    }
+
 }

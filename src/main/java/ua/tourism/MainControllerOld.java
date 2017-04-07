@@ -27,7 +27,7 @@
 //                                  @RequestParam("freeOrBusy") String freeOrBusy,
 //                                  Model model,
 //                                  HotelRoomOld hotelRoomOld){
-//        hotelRoomOld.setNameRoom(nameRoom);
+//        hotelRoomOld.setNameHotel(nameRoom);
 //        hotelRoomOld.setBadInRoom(Integer.parseInt(badInRoom));
 //        hotelRoomOld.setPriceRoom(Double.parseDouble(priceRoom));
 //        if ("true".equals(freeOrBusy)){

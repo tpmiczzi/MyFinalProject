@@ -71,7 +71,7 @@
         <c:forEach items="${listHotels}" var="hotel">
             <tr>
                 <td>${hotel.id}</td>
-                <td><a href="/hoteldata/${hotel.id}" target="_blank">${hotel.nameRoom}</a></td>
+                <td><a href="/hoteldata/${hotel.id}" target="_blank">${hotel.nameHotel}</a></td>
                 <td>${hotel.countryHotel}</td>
                 <td>${hotel.starsHotel}</td>
                 <td>${hotel.amountRooms}</td>
@@ -92,7 +92,7 @@
 
 <%--<form:form action="${addAction}" commandName="hotel">--%>
     <%--<table>--%>
-        <%--<c:if test="${!empty hotel.nameRoom}">--%>
+        <%--<c:if test="${!empty hotel.nameHotel}">--%>
             <%--<tr>--%>
                 <%--<td>--%>
                     <%--<form:label path="id">--%>
@@ -107,12 +107,12 @@
         <%--</c:if>--%>
         <%--<tr>--%>
             <%--<td>--%>
-                <%--<form:label path="nameRoom">--%>
+                <%--<form:label path="nameHotel">--%>
                     <%--<spring:message text="Name Hotel"/>--%>
                 <%--</form:label>--%>
             <%--</td>--%>
             <%--<td>--%>
-                <%--<form:input path="nameRoom"/>--%>
+                <%--<form:input path="nameHotel"/>--%>
             <%--</td>--%>
         <%--</tr>--%>
         <%--<tr>--%>
@@ -147,11 +147,11 @@
         <%--</tr>--%>
         <%--<tr>--%>
             <%--<td colspan="2">--%>
-                <%--<c:if test="${!empty hotel.nameRoom}">--%>
+                <%--<c:if test="${!empty hotel.nameHotel}">--%>
                     <%--<input type="submit"--%>
                            <%--value="<spring:message text="Edit Hotel"/>"/>--%>
                 <%--</c:if>--%>
-                <%--<c:if test="${empty hotel.nameRoom}">--%>
+                <%--<c:if test="${empty hotel.nameHotel}">--%>
                     <%--<input type="submit"--%>
                            <%--value="<spring:message text="Add Hotel"/>"/>--%>
                 <%--</c:if>--%>

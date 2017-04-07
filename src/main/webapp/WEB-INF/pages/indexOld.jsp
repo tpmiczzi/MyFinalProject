@@ -19,7 +19,7 @@
                         <div>name room</div>
                     </td>
                     <td>
-                        <input name="nameRoom" type="text">
+                        <input name="nameHotel" type="text">
                     </td>
                     <td>
                         <span style='color:red' id='errorNameRoom'></span>
@@ -77,7 +77,7 @@
         </tr>
         <c:forEach items="${hotelRoomOldList}" var="hotelRoomOldList">
             <tr class="select">
-                <td class="tdThOutput">${hotelRoomOldList.nameRoom}</td>
+                <td class="tdThOutput">${hotelRoomOldList.nameHotel}</td>
                 <td class="tdThOutput">${hotelRoomOldList.badInRoom}</td>
                 <td class="tdThOutput">${hotelRoomOldList.priceRoom}</td>
                 <td class="tdThOutput">${hotelRoomOldList.freeOrBusy}</td>

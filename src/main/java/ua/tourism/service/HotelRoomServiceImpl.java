@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.tourism.dao.HotelRoomDao;
 import ua.tourism.model.HotelRoom;
 
+import java.util.Date;
 import java.util.List;
 
 public class HotelRoomServiceImpl implements HotelRoomService {
@@ -41,5 +42,11 @@ public class HotelRoomServiceImpl implements HotelRoomService {
     @Transactional
     public List<HotelRoom> listHotelRoom(int id) {
         return this.hotelRoomDao.listHotelRoom(id);
+    }
+
+    @Override
+    @Transactional
+    public void addDate(HotelRoom hotelRoom, Date date) {
+        this.hotelRoomDao.addDate(hotelRoom, date);
     }
 }

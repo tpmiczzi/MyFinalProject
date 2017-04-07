@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ua.tourism.model.HotelRoom;
 
+import java.util.Date;
 import java.util.List;
 
 public class HotelRoomDaoImpl implements HotelRoomDao {
@@ -54,12 +55,20 @@ public class HotelRoomDaoImpl implements HotelRoomDao {
     @SuppressWarnings("unchecked")
     public List<HotelRoom> listHotelRoom(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        List<HotelRoom> hotelRoomsList = session.createQuery("from HotelRoom WHERE hotelroom.hotelid="+id).list();
+        List<HotelRoom> hotelRoomsList = session.createQuery("from HotelRoom WHERE hotelid = :hotelid").setInteger("hotelid", id).list();
 
         for (HotelRoom hotelRoom: hotelRoomsList){
             logger.info("Hotel room list: " + hotelRoom);
         }
 
         return hotelRoomsList;
+    }
+
+    @Override
+    public void addDate(HotelRoom hotelRoom, Date date) {
+        Session session = this.sessionFactory.getCurrentSession();
+        hotelRoom.setBookedFrom(date);
+        session.update(hotelRoom);
+        logger.info("Hotel room successfully UPDATE with new DATE. Hotel room details: " + hotelRoom);
     }
 }

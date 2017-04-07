@@ -14,7 +14,7 @@
 //        return id;
 //    }
 //
-//    public String getNameRoom() {
+//    public String getNameHotel() {
 //        return nameRoom;
 //    }
 //
@@ -30,7 +30,7 @@
 //        return freeOrBusy;
 //    }
 //
-//    public void setNameRoom(String nameRoom) {
+//    public void setNameHotel(String nameRoom) {
 //        this.nameRoom = nameRoom;
 //    }
 //

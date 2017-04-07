@@ -53,19 +53,61 @@
 
 <table class="tg">
     <tr>
-        <th width="80">ID</th>
-        <th width="120">Name</th>
-        <th width="120">Country</th>
-        <th width="120">Stars</th>
-        <th width="60">Amount rooms</th>
+        <td>ID</td>
+        <td>${hotel.id}</td>
     </tr>
     <tr>
-        <td>${hotel.id}</td>
-        <td>${hotel.nameRoom}</td>
-        <td>${hotelRoom.nameroom}</td>
-        <td>${hotelRoom.amountbed}</td>
-        <td>${hotelRoom.price}</td>
+        <td>Name</td>
+        <td>${hotel.nameHotel}</td>
     </tr>
+    <tr>
+        <td>Country</td>
+        <td>${hotel.countryHotel}</td>
+    </tr>
+    <tr>
+        <td>Stars</td>
+        <td>${hotel.starsHotel}</td>
+    </tr>
+    <tr>
+        <td>Amount rooms</td>
+        <td>${hotel.amountRooms}</td>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>
+
+<table class="tg">
+    <tr>
+        <th width="80">ID</th>
+        <th width="120">Name Room</th>
+        <th width="120">Amount Bed</th>
+        <th width="120">Price</th>
+        <th width="80">Booked From</th>
+        <th width="80">Booked To</th>
+    </tr>
+    <c:forEach items="${hotelRoom}" var="bookedFrom">
+    <tr>
+        <td>${hotelRoom.id}</td>
+        <td>${hotelRoom.nameRoom}</td>
+        <td>${hotelRoom.amountBed}</td>
+        <td>${hotelRoom.price}</td>
+        <td>
+            <c:url var="addActionHotelRoom" value="/room/addDate"/>
+            <form:form action="${addActionHotelRoom}" commandName="hotelRoom">
+                <c:if test="${not empty hotelRoom.bookedFrom}">
+                    <%--not null--%>
+                    ${hotelRoom.bookedFrom}
+                </c:if>
+                <c:if test="${empty hotelRoom.bookedFrom}">
+                    <%--null--%>
+                    <form:input path="bookedFrom"/>
+                </c:if>
+            </form:form>
+        </td>
+        <td>${hotelRoom.bookedTo}</td>
+    </tr>
+    </c:forEach>
 </table>
 </body>
 </html>

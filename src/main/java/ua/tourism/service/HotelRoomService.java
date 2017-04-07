@@ -2,6 +2,7 @@ package ua.tourism.service;
 
 import ua.tourism.model.HotelRoom;
 
+import java.util.Date;
 import java.util.List;
 
 public interface HotelRoomService {
@@ -14,4 +15,7 @@ public interface HotelRoomService {
     HotelRoom getHotelRoomById(int id);
 
     List<HotelRoom> listHotelRoom(int id);
+
+    public void addDate(HotelRoom hotelRoom, Date date);
+
 }
