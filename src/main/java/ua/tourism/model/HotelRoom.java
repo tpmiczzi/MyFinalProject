@@ -21,7 +21,7 @@ public class HotelRoom {
     private int price;
 
     @Column(name = "bookedfrom")
-    private Date bookedFrom;
+    private Integer bookedFrom;
 
     @Column(name = "bookedto")
     private Date bookedTo;
@@ -58,11 +58,11 @@ public class HotelRoom {
         this.price = price;
     }
 
-    public Date getBookedFrom() {
+    public Integer getBookedFrom() {
         return bookedFrom;
     }
 
-    public void setBookedFrom(Date bookedFrom) {
+    public void setBookedFrom(Integer bookedFrom) {
         this.bookedFrom = bookedFrom;
     }
 

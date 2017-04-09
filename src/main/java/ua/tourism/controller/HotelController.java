@@ -14,11 +14,13 @@ import ua.tourism.service.HotelRoomService;
 import ua.tourism.service.HotelService;
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class HotelController {
     private HotelService hotelService;
     private HotelRoomService hotelRoomService;
+    private int tmpIdHotel;
 
     @Autowired(required = true)
     @Qualifier(value = "hotelService")
@@ -86,19 +88,32 @@ public class HotelController {
 
     // open page with data about hotel and room
     @RequestMapping("hoteldata/{id}")
-    public String bookData(@PathVariable("id") int id, Model model){
+    public String bookData(@PathVariable("id") int id, Model model, @ModelAttribute("hotelRoom")HotelRoom hotelRoom){
+        tmpIdHotel = id;
         model.addAttribute("hotel", this.hotelService.getHotelById(id));
-        model.addAttribute("hotelRoom", this.hotelRoomService.listHotelRoom(id));
+        model.addAttribute("listHotelRoom", this.hotelRoomService.listHotelRoom(id));
+
+
+//        List<HotelRoom> tmp = this.hotelRoomService.listHotelRoom(id);
+//        for (HotelRoom tmpOne:tmp){
+//            model.addAttribute("id", tmpOne.getId());
+//            model.addAttribute("nameRoom", tmpOne.getNameRoom());
+//        }
+
 
         return "hoteldata";
     }
 
     // add date from booked
-    @RequestMapping("room/addDate")
-    public String addDate(@ModelAttribute("hotelRoom") HotelRoom hotelRoom, @ModelAttribute("bookedFrom")Date date){
+    @RequestMapping(value = "room/addDate", method = RequestMethod.POST)
+    public String addDate(@ModelAttribute("hotelRoom")HotelRoom hotelRoom){
 
-        this.hotelRoomService.addDate(hotelRoom, date);
-        return "redirect:/hoteldata/{id}";
+        if (hotelRoom.getId() == 0){
+            this.hotelRoomService.addHotelRoom(hotelRoom);
+        }else {
+            this.hotelRoomService.updateHotelRoom(hotelRoom);
+        }
+        return "redirect:/hoteldata/"+tmpIdHotel;
     }
 
 }

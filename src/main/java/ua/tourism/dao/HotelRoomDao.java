@@ -16,6 +16,6 @@ public interface HotelRoomDao {
 
     List<HotelRoom> listHotelRoom(int id);
 
-    public void addDate(HotelRoom hotelRoom, Date date);
+    public void addDate(HotelRoom hotelRoom, Integer dataFrom);
 }
 

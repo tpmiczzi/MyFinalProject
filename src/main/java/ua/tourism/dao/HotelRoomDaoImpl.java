@@ -65,9 +65,9 @@ public class HotelRoomDaoImpl implements HotelRoomDao {
     }
 
     @Override
-    public void addDate(HotelRoom hotelRoom, Date date) {
+    public void addDate(HotelRoom hotelRoom, Integer dataFrom) {
         Session session = this.sessionFactory.getCurrentSession();
-        hotelRoom.setBookedFrom(date);
+        hotelRoom.setBookedFrom(dataFrom);
         session.update(hotelRoom);
         logger.info("Hotel room successfully UPDATE with new DATE. Hotel room details: " + hotelRoom);
     }
