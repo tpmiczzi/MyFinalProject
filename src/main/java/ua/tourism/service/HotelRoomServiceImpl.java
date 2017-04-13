@@ -46,7 +46,7 @@ public class HotelRoomServiceImpl implements HotelRoomService {
 
     @Override
     @Transactional
-    public void addDate(HotelRoom hotelRoom, Integer dataFrom) {
-        this.hotelRoomDao.addDate(hotelRoom, dataFrom);
+    public void addDate(HotelRoom hotelRoom) {
+        this.hotelRoomDao.addDate(hotelRoom);
     }
 }
